@@ -1,3 +1,8 @@
-# 数据平滑
 
-本包主要封装数据平滑相关接口.
+# Smoothing
+**Read this in other languages: [简体中文](./README.zh-CN.md)**
+
+This package mainly encapsulates data smoothing related interfaces.
+
+>[!IMPORTANT]
+> Related interfaces have not been developed yet.

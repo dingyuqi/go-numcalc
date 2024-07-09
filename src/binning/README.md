@@ -1,67 +1,67 @@
-# 数值分类
+# Binning
+**Read this in other languages: [简体中文](./README.zh-CN.md)**
 
-本包主要封装数值分类相关接口.
+This package mainly encapsulates interfaces related to numerical classification.
 
-## 结构体
+## Structure
 
 ```go
 package binning
 
 type Calculator struct {
-	width         int32 // 等宽分组参数: 总共分组的组别个数
-	freq          int32 // 等频分组参数: 每组中包含的数值个数
-	kMeansMaxIter int32 // 聚类分组参数: KMeans算法最大迭代次数
-	kMeansK       int32 //聚类分组参数: KMeans算法k值
+	width         int32 // Equal width grouping parameter: the total number of groups
+	freq          int32 // Equal frequency grouping parameter: the number of values ​​contained in each group
+	kMeansMaxIter int32 // Clustering grouping parameter: the maximum number of iterations of the KMeans algorithm
+	kMeansK       int32 // Clustering grouping parameter: the k value of the KMeans algorithm
 }
 
 ```
 
-可以调用 ```func NewCalculator(optionalParam ...int32) Calculator``` 获取对象.
-动态参数如果长度等于4则会以 width, freq, kMeansMaxIter, kMeansK 的顺序进行初始化, 如果长度不为4则自动初始化为默认参数.
-默认参数信息详见文件 ```src/static.go```
+You can call ```func NewCalculator(optionalParam ...int32) Calculator``` to get the object.
+If the length of the dynamic parameter is equal to 4, it will be initialized in the order of width, freq, kMeansMaxIter,
+kMeansK. If the length is not 4, it will be automatically initialized to the default parameter.
+For details about the default parameters, see the file ```src/static.go```
 
-## 接口
+## Interface
 
-1. **ClusterWithKMeansInt32([]int32) ([]int32, error)**
-    ```text
-    使用K-Means算法对数据进行聚类分组.
-    注意: 
-   1. 输入数据长度不可为0. 
-   2. k值不可大于数据点的数量.
-    ```
+### 1.ClusterWithKMeansInt32([]int32) ([]int32, error)
 
-2. **ClusterWithKMeansFloat32([]float32) ([]int32, error)**
-    ```text
-    使用K-Means算法对数据进行聚类分组.
-    注意: 
-   1. 输入数据长度不可为0. 
-   2. k值不可大于数据点的数量.
-    ```
+Use the K-Means algorithm to cluster and group data. The slice index returned by the function corresponds to the input
+slice, and the slice element is the group number of the value of the index.
+> [!IMPORTANT]
+> 1. The input data length cannot be 0.
+> 2. The k value cannot be greater than the number of data points.
 
-3. **EqualWidthBinningInt32([]int32) ([]int32, error)**
-    ```text
-    对数据进行等宽分组, 分组数量为Calculator.width
-    返回每个数据点的区间索引.
-    注意: 输入的数据长度不得为0
-    ```
+### 2. ClusterWithKMeansFloat32([]float32) ([]int32, error)
 
-4. **EqualWidthBinningFloat32([]float32) ([]int32, error)**
-    ```text
-    对数据进行等宽分组, 分组数量为Calculator.width
-    返回每个数据点的区间索引.
-    注意: 输入的数据长度不得为0
-    ```
+Use the K-Means algorithm to cluster and group data. The slice index returned by the function corresponds to the input
+slice, and the slice element is the group number of the value of the index.
+> [!IMPORTANT]
+> 1. The input data length cannot be 0.
+> 2. The k value cannot be greater than the number of data points.
 
-5. **EqualFrequencyBinningInt32([]int32) ([]int32, error)**
-    ```text
-    对数据进行等频分组, 每组数据个数为Calculator.freq
-    返回每个数据点的区间索引.
-    ```
+### 3. EqualWidthBinningInt32([]int32) ([]int32, error)
 
-6. **EqualFrequencyBinningFloat32([]float32) ([]int32, error)**
-    ```text
-    对数据进行等频分组, 每组数据个数为Calculator.freq
-    返回每个数据点的区间索引.
-    ```
-   
+Group the data with equal width, the number of groups is Calculator.width. The function returns the interval index of
+each data point.
 
+> [!IMPORTANT]
+> The length of the input data cannot be 0
+
+### 4. EqualWidthBinningFloat32([]float32) ([]int32, error)
+
+Group the data with equal width, the number of groups is Calculator.width. The function returns the interval index of
+each data point.
+
+> [!IMPORTANT]
+> The length of the input data cannot be 0
+
+### 5. EqualFrequencyBinningInt32([]int32) ([]int32, error)
+
+Group the data with equal frequency, the number of data in each group is Calculator.freq. The function returns the
+interval index of each data point.
+
+### 6. EqualFrequencyBinningFloat32([]float32) ([]int32, error)
+
+Group the data with equal frequency, The number of data points in each group is Calculator.freq. The function returns
+the interval index of each data point.

@@ -1,47 +1,53 @@
-# 数值转换
+# Outlier
+**Read this in other languages: [简体中文](./README.zh-CN.md)**
+This package mainly encapsulates outlier judgment related interfaces.
 
-本包主要封装离群值判断相关接口.
-
-## 结构体
+## Structure
 
 ```go
 package outlier
 
 type Calculator struct {
-	threshold float32 // 判断离群值的阈值
+	threshold float32 // Threshold for judging outliers
 }
-
 ```
+You can call ```NewCalculator(threshold float32) Calculator``` to get the object.
 
-可以调用 ```NewCalculator(threshold float32) Calculator``` 获取对象.
+## Interface
 
-## 接口
+### 1. DetectOutliersByStandardDeviationInt32([]int32) ([]bool, error)
+Judging outliers based on standard deviation.
 
-1. **DetectOutliersByStandardDeviationInt32([]int32) ([]bool, error)**
-    ```text
-    根据标准差判断离群值.
-    计算数据点于平均值的标准差之间的差异, 超过阈值时视为离群值.
-    切片下标对应为true则表示该值为离群值, 为false则为正常值.
-    注意: 入参切片长度不可小于2.
-    ```
-2. **DetectOutliersByStandardDeviationFloat32([]float32) ([]bool, error)**
-    ```text
-    根据标准差判断离群值.
-    计算数据点于平均值的标准差之间的差异, 超过阈值时视为离群值.
-    切片下标对应为true则表示该值为离群值, 为false则为正常值.
-    注意: 入参切片长度不可小于2.
-    ```
-3. **DetectOutliersByQuartilesInt32([]int32) ([]bool, error)**
-    ```text
-    根据四分位数判断离群值.
-    计算数据的四分位数和异常值范围，将超出上下边界的值视为离群值.
-    切片下标对应为true则表示该值为离群值, 为false则为正常值.
-    注意: 入参切片长度不可小于2.
-    ```
-4. **DetectOutliersByQuartilesFloat32([]float32) ([]bool, error)**
-    ```text
-    根据四分位数判断离群值.
-    计算数据的四分位数和异常值范围，将超出上下边界的值视为离群值.
-    切片下标对应为true则表示该值为离群值, 为false则为正常值.
-    注意: 入参切片长度不可小于2.
-    ```
+Calculate the difference between the standard deviation of the data point and the mean value. If it exceeds the threshold, it is considered an outlier.
+
+If the corresponding slice subscript is true, it means that the value is an outlier, and if it is false, it is a normal value.
+
+> [!IMPORTANT]
+> The length of the input slice cannot be less than 2.
+
+### 2. DetectOutliersByStandardDeviationFloat32([]float32) ([]bool, error)
+Determine outliers based on standard deviation.
+
+Calculate the difference between the standard deviation of the data point and the mean value, and consider it an outlier when it exceeds the threshold.
+If the slice subscript corresponds to true, it means that the value is an outlier, and if it is false, it is a normal value.
+
+> [!IMPORTANT]
+> The length of the input slice cannot be less than 2.
+
+### 3. DetectOutliersByQuartilesInt32([]int32) ([]bool, error)
+
+Determine outliers based on quartiles.
+
+Calculate the quartiles and outlier range of the data, and consider values ​​beyond the upper and lower boundaries as outliers.
+If the slice subscript corresponds to true, it means that the value is an outlier, and if it is false, it is a normal value.
+
+> [!IMPORTANT]
+> The length of the input slice cannot be less than 2.
+
+### 4. DetectOutliersByQuartilesFloat32([]float32) ([]bool, error)
+Judging outliers based on quartiles.
+
+Calculate the quartiles and outlier range of the data, and treat values ​​beyond the upper and lower boundaries as outliers.
+If the slice subscript is true, it means that the value is an outlier, and if it is false, it is a normal value.
+> [!IMPORTANT]
+> The length of the input slice cannot be less than 2.
