@@ -67,8 +67,8 @@ $X$是原始数据, $\mu$是数据的平均值, $\sigma$是数据的标准差.
 
 ### 5. LogInt32([]int32) ([]float32, error)
 计算对数.
-计算公式为: 
-$$log(base, x)$$
+计算公式为:
+$$y = $\log_{base}{x}$$
 > [!TIP]
 > base默认为自然数e
 
@@ -82,7 +82,7 @@ $$log(base, x)$$
 ### 6. LogFloat32([]float32) ([]float32, error)
 计算对数.
 计算公式为:
-$$log(base, x)$$
+$$y = $\log_{base}{x}$$
 > [!TIP]
 > base默认为自然数e
 
@@ -98,7 +98,7 @@ $$log(base, x)$$
 计算平方根.
 
 计算公式为:
-$$\sqrt{x}$$
+$$y = \sqrt{x}$$
 
 > [!IMPORTANT]
 > 需保证输入参数均为非负实数, 否则:
@@ -111,7 +111,7 @@ $$\sqrt{x}$$
 计算平方根.
 
 计算公式为:
-$$\sqrt{x}$$
+$$y = \sqrt{x}$$
 
 > [!IMPORTANT]
 > 需保证输入参数均为非负实数, 否则:

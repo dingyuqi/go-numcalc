@@ -66,7 +66,7 @@ $X$ is the original data, $\mu$ is the mean value of the data, and $\sigma$ is t
 ### 5. LogInt32([]int32) ([]float32, error)
 Calculate the logarithm.
 The calculation formula is:
-$$log(base, x)$$
+$$y = $\log_{base}{x}$$
 > [!TIP]
 > base defaults to the natural number e
 
@@ -80,7 +80,7 @@ $$log(base, x)$$
 ### 6. LogFloat32([]float32) ([]float32, error)
 Calculates logarithm.
 Calculation formula:
-$$log(base, x)$$
+$$y = $\log_{base}{x}$$
 > [!TIP]
 > base defaults to natural number e
 
@@ -95,7 +95,7 @@ $$log(base, x)$$
 Calculates square root.
 
 Calculation formula:
-$$\sqrt{x}$$
+$$y = \sqrt{x}$$
 
 > [!IMPORTANT]
 > Input parameters must be non-negative real numbers, otherwise:
@@ -108,7 +108,7 @@ $$\sqrt{x}$$
 Calculate the square root.
 
 The calculation formula is:
-$$\sqrt{x}$$
+$$y = \sqrt{x}$$
 
 > [!IMPORTANT]
 > Ensure that all input parameters are non-negative real numbers, otherwise:

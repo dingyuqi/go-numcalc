@@ -10,15 +10,17 @@ All functions support only two data types: Int32 and Float32.
 > This package is written in Go language and contains part of C++, that is, the cgo part
 
 <!-- TOC -->
+
 * [go_numcalc](#go_numcalc)
-  * [Installation](#installation)
-  * [Dependencies](#dependencies)
-  * [Usage](#usage)
-  * [Project structure](#project-structure)
-  * [Development](#development)
-    * [First phase functions](#first-phase-functions)
-    * [Phase II functions (TODO)](#phase-ii-functions-todo)
-  * [License](#license)
+    * [Installation](#installation)
+    * [Dependencies](#dependencies)
+    * [Usage](#usage)
+    * [Project structure](#project-structure)
+    * [Development](#development)
+        * [First phase functions](#first-phase-functions)
+        * [Phase II functions (TODO)](#phase-ii-functions-todo)
+    * [License](#license)
+
 <!-- TOC -->
 
 ## Installation
@@ -100,8 +102,8 @@ on the Go language.
 |---------------|------------------|-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
 | 1             | Data conversion  | Minimum and maximum standardization | Perform a linear transformation on the data series so that the processed data all fall within the interval [0, 1]                                                                                                                                                 |                                                                                                               |
 | 2             | Data conversion  | Z-score standardization             | Subtract the mean and divide by the variance for each data point in the data series so that the processed data approximately conforms to the standard normal distribution of (0, 1)                                                                               |                                                                                                               |
-| 3             | Data conversion  | Logarithmic transformation          | y = log(base, x)                                                                                                                                                                                                                                                  | 1. Negative value processing </br> 2. base value                                                              |
-| 4             | Data conversion  | Square root transformation          | y = √(x)                                                                                                                                                                                                                                                          | Negative value processing                                                                                     |
+| 3             | Data conversion  | Logarithmic transformation          | $y = $\log_{base}{x}$                                                                                                                                                                                                                                             | 1. Negative value processing </br> 2. base value                                                              |
+| 4             | Data conversion  | Square root transformation          | $y = \sqrt{x}$                                                                                                                                                                                                                                                    | Negative value processing                                                                                     |
 | 5             | Data Grouping    | Cluster Grouping                    | Use cluster analysis methods to group data points into clusters with similar characteristics. Cluster grouping can be used to discover clustering patterns and categories in the data, which is useful for data mining and classification tasks.                  | 1. Clustering method (random_subset, static_subset, etc.) 2. Number of clusters                               | |
 | 6             | Data Grouping    | Equal Width Grouping                | Divide the value range of the data into intervals of equal width. This method is simple and intuitive, but may not reflect the distribution characteristics of the data well, especially when there are imbalanced data or outliers.                              | Group Width                                                                                                   |
 | 7             | Data Grouping    | Equal Frequency Grouping            | Divide the data into groups containing the same number of data points. This method can better consider the distribution characteristics of the data, but for data containing a large number of repeated values, it may cause some groups to have the same values. | Number of Groups                                                                                              |
