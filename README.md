@@ -10,17 +10,15 @@ All functions support only two data types: Int32 and Float32.
 > This package is written in Go language and contains part of C++, that is, the cgo part
 
 <!-- TOC -->
-
 * [go_numcalc](#go_numcalc)
-    * [Installation](#installation)
-    * [Dependencies](#dependencies)
-    * [Usage](#usage)
-    * [Project structure](#project-structure)
-    * [Development](#development)
-        * [First phase functions](#first-phase-functions)
-        * [Phase II functions (TODO)](#phase-ii-functions-todo)
-    * [License](#license)
-
+  * [Installation](#installation)
+  * [Dependencies](#dependencies)
+  * [Usage](#usage)
+  * [Project structure](#project-structure)
+  * [Development](#development)
+    * [Phase I  functions](#phase-i--functions)
+    * [Phase II functions (TODO)](#phase-ii-functions-todo)
+  * [License](#license)
 <!-- TOC -->
 
 ## Installation
