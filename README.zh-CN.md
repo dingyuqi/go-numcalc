@@ -1,8 +1,8 @@
-# go_numcalc
+# go-numcalc
 
 **其他语言版本: [English](./README.md)**
 
-go_numcalc 包是一个Go语言开发的包. 主要功能为针对数值类型的数据进行数据转换, 数据分组, 数据平滑等基础的数值处理.
+go-numcalc 包是一个Go语言开发的包. 主要功能为针对数值类型的数据进行数据转换, 数据分组, 数据平滑等基础的数值处理.
 所有功能均仅支持两种数据类型: Int32和Float32.
 
 > [!TIP]
@@ -10,7 +10,7 @@ go_numcalc 包是一个Go语言开发的包. 主要功能为针对数值类型�
 
 <!-- TOC -->
 
-* [go_numcalc](#go_numcalc)
+* [go-numcalc](#go-numcalc)
     * [安装](#安装)
     * [依赖](#依赖)
     * [用法](#用法)
@@ -27,7 +27,7 @@ go_numcalc 包是一个Go语言开发的包. 主要功能为针对数值类型�
 使用 `go get`安装
 
 ```shell
-go get -u git@github.com/dingyuqi/go_numcalc.git
+go get -u git@github.com/dingyuqi/go-numcalc.git
 ```
 
 ## 依赖
@@ -50,7 +50,7 @@ NumCalc 包中主要使用两个外部库:
 package main
 
 import (
-	"github.com/dingyuqi/go_numcalc/src/conversion"
+	"github.com/dingyuqi/go-numcalc/src/conversion"
 	"log"
 )
 
