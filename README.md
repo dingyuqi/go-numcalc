@@ -1,4 +1,4 @@
-# go_numcalc
+# go-numcalc
 
 **Read this in other languages: [简体中文](./README.zh-CN.md)**
 
