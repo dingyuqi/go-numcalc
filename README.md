@@ -2,7 +2,7 @@
 
 **Read this in other languages: [简体中文](./README.zh-CN.md)**
 
-The go_numcalc package is a package developed in Go language. Its main function is to perform basic numerical processing
+The go-numcalc package is a package developed in Go language. Its main function is to perform basic numerical processing
 such as data conversion, data grouping, and data smoothing for numerical type data.
 All functions support only two data types: Int32 and Float32.
 
@@ -10,7 +10,7 @@ All functions support only two data types: Int32 and Float32.
 > This package is written in Go language and contains part of C++, that is, the cgo part
 
 <!-- TOC -->
-* [go_numcalc](#go_numcalc)
+* [go-numcalc](#go-numcalc)
   * [Installation](#installation)
   * [Dependencies](#dependencies)
   * [Usage](#usage)
@@ -23,10 +23,10 @@ All functions support only two data types: Int32 and Float32.
 
 ## Installation
 
-Use the `go get` to install go_numcalc.
+Use the `go get` to install go-numcalc.
 
 ```shell
-go get github.com/dingyuqi/go_numcalc
+go get github.com/dingyuqi/go-numcalc
 ```
 
 ## Dependencies
@@ -51,7 +51,7 @@ with this Demo.
 package main
 
 import (
-	"github.com/dingyuqi/go_numcalc/src/conversion"
+	"github.com/dingyuqi/go-numcalc/src/conversion"
 	"log"
 )
 
